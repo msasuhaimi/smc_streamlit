@@ -23,7 +23,7 @@ def topTen(account_rep):
 	dftopten = df[filter1 & filter2 & filter3].groupby(['Tweet_Text'])['Favorite_count','Retweet_count', 'Engagement_count'].sum().fillna(0).sort_values(by = ['Engagement_count'],ascending = False).reset_index()
 
 	#print
-	st.header('Top 10 Most popular tweets for '+account_rep)
+	st.header('Top 5 Most popular tweets for '+account_rep)
 	for x in range(0,5):
 			
 		st.write('Status',x+1,': ',dftopten['Tweet_Text'][x])
