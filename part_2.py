@@ -1,6 +1,4 @@
 # part_2
-import tweepy
-from tweepy import OAuthHandler
 import altair as alt
 import pandas as pd
 import numpy as np
@@ -8,7 +6,6 @@ from datetime import date
 import networkx as nx
 import community.community_louvain as community_louvain
 import matplotlib.pyplot as plt
-from operator import itemgetter
 
 # Brand Friends
 nodeList = ["HyperX", "Razer", "Logitech"]
