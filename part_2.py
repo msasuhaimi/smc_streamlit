@@ -2,18 +2,16 @@
 import altair as alt
 import pandas as pd
 import numpy as np
-from datetime import date
 import networkx as nx
-import community.community_louvain as community_louvain
 import matplotlib.pyplot as plt
 
 # Brand Friends
 nodeList = ["HyperX", "Razer", "Logitech"]
 edgeList = []
 
-dfHyperXFollowing = pd.read_csv('/content/drive/Shareddrives/SMC/HyperXFollowing.csv', index_col = 0)
-dfLogitechFollowing = pd.read_csv('/content/drive/Shareddrives/SMC/LogitechFollowing.csv', index_col = 0)
-dfRazerFollowing = pd.read_csv('/content/drive/Shareddrives/SMC/RazerFollowing.csv', index_col = 0)
+dfHyperXFollowing = pd.read_csv('HyperXFollowing.csv', index_col = 0)
+dfLogitechFollowing = pd.read_csv('LogitechFollowing.csv', index_col = 0)
+dfRazerFollowing = pd.read_csv('RazerFollowing.csv', index_col = 0)
 
 
 for index, row in dfHyperXFollowing.iterrows():
@@ -48,8 +46,6 @@ for i in nodeList:
     color.append("#079a03")
   elif i == "Logitech":
     color.append("#5eb1ff")
-
-
 
 fig = plt.figure(figsize = (20,20))
 nx.draw(G, pos=pos, edge_color="#dedede", node_color = "#47fff7", linewidths=0.05, node_size=20, alpha=0.6, with_labels=False)
